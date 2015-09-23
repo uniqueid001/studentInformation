@@ -22,17 +22,17 @@ function get(username){
 
 		response.on("end", function(){
 			if(response.statusCode === 200){
-			try{
-			var profile = JSON.parse(body);
-			printMessage(username, profile.badges.length, profile.points.JavaScript);
-		}
-		catch(error){
-			printError(error);
-		}
-	}
-	else{
-		printError({message: "There was an error getting profile for " + username + "."})
-	}
+				try{
+					var profile = JSON.parse(body);
+					printMessage(username, profile.badges.length, profile.points.JavaScript);
+				}
+				catch(error){
+					printError(error);
+				}
+			}
+			else{
+				printError({message: "There was an error getting profile for " + username + "."})
+			}
 		});
 	});
 
